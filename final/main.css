@@ -16,6 +16,9 @@ body{
 	min-height: 300px;
 	overflow-x: hidden;
 }
+h2{
+text-align: center;
+}
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -463,7 +466,7 @@ time {
 	height: 100%;
 	width: 50%;
 	right: 0;
-	background: url(img/raj-eiamworakul-603747-unsplash.jpg) no-repeat 50% 0%;
+	background: url(img/brain.gif) no-repeat 50% 0%;
 	background-size: cover;
 }
 
