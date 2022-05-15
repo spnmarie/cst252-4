@@ -1,7 +1,7 @@
 /* taken from mary lou's block reveal effect demo */
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{
-    background:#fff;
+    background:#f0f0f0;
     font-family: 'Ubuntu', sans-serif;
 }
 #rfx4
@@ -10,7 +10,14 @@ body{
    -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.content {
+	position: relative;
+	min-height: 300px;
+	overflow-x: hidden;
+}
 
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 
 .timeline ul {
@@ -120,8 +127,9 @@ body::after {
 	.st12{clip-path:url(#SVGID_14_);}
 	.st13{opacity:0.2;}
 	.st14{clip-path:url(#SVGID_16_);}
-	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
-
+	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    
+  padding: 50px 0;
+}
 
 .timeline ul li {
   list-style-type: none;
@@ -196,7 +204,7 @@ time {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul li::after {
-  transition: background 0.5s ease-in-out;
+  transition:  0.5s ease-in-out;
 }
 
 .timeline ul li.in-view::after {
@@ -317,10 +325,6 @@ time {
 .myChart
 
 
-.content {
-	position: relative;
-	min-height: 300px;
-	overflow-x: hidden;
 }
 
 .content--full {
@@ -458,7 +462,7 @@ time {
 	height: 100%;
 	width: 50%;
 	right: 0;
-	background: url(img/p.png) no-repeat 50% 0%;
+	background: url(img/raj-eiamworakul-603747-unsplash.jpg) no-repeat 50% 0%;
 	background-size: cover;
 }
 
