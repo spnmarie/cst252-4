@@ -19,8 +19,8 @@ function showThemColors() {
     var btn10 = document.querySelectorAll('#rev-trigger-10')[0];
     var btn11 = document.querySelectorAll('#rev-trigger-11')[0];
     var btn12 = document.querySelectorAll('#rev-trigger-12')[0];
-   
-    
+
+
     var revealSettings = {
         bgColors: ['#111'],
         duration: 600,
@@ -45,7 +45,7 @@ function showThemColors() {
         }
     };
     var revealSettings3 = {
-        bgColors: ['#FFB900','#FF8C00','#F7630C','#E74856','#E81123','#0078D7','#0063B1'],
+        bgColors: ['#ea999e','#d8777d','#c15258','#a34248','#883b3f','#662e31','#4b1c1f'],
         duration: 400,
         delay: 100,
         direction: 'lr',
@@ -75,7 +75,7 @@ function showThemColors() {
         isContentHidden:true,
         layers:4,
         revealSettings : {
-            bgColors: ['#2c2c38','#2c2c38','#2c2c38','#2c2c38'],
+            bgColors: ['#ea999e','#c15258','#883b3f','#662e31'],
             direction: 'rl',
             duration: 800,
             easing: 'easeInOutCirc',
@@ -96,7 +96,7 @@ function showThemColors() {
         isContentHidden : true,
         revealSettings: revealSettings3
     });
-    
+
 
     revealerEffect.reveal();
     revealEffect3.reveal();
@@ -123,9 +123,9 @@ function showThemColors() {
         revealerEffect.reveal(revealSettings);
     }
     btn5.onclick = function() {
-      
-      revealSettings.bgColors[0] = '#283593';
-      revealSettings2.bgColors[0] = '#FBC02D';
+
+      revealSettings.bgColors[0] = '#864747';
+      revealSettings2.bgColors[0] = '#9e6b74';
       revealerEffect.reveal(revealSettings);
     }
     btn6.onclick = function(){
@@ -152,8 +152,8 @@ function showThemColors() {
     }
     btn10.onclick = function()
     {
-        var quotations = ['Inhale confidence,exhale doubts','Do it or watch yourself sad when others show it','Be yourself,because everyone else is taken'];
-        
+        var quotations = ['Your mental health is a priority','You do not have to struggle in silence','Self care is how you take your power back'];
+
         revealSettings3 = resetTheSetting()
         revealSettings3.onHalfway =  function(contentEl)
         {
@@ -176,7 +176,7 @@ function showThemColors() {
     resetTheSetting = function()
     {
         return {
-            bgColors: ['#FFB900','#FF8C00','#F7630C','#E74856','#E81123','#0078D7','#0063B1'],
+            bgColors: ['#ea999e','#d8777d','#c15258','#a34248','#883b3f','#662e31','#4b1c1f'],
             duration: 400,
             delay: 100,
             direction: 'lr',
@@ -190,4 +190,3 @@ function showThemColors() {
         }
     }
 }
-

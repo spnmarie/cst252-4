@@ -5,7 +5,7 @@
 
 	// Helper vars and functions.
 	function extend(a, b) {
-		for(var key in b) { 
+		for(var key in b) {
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -19,8 +19,8 @@
 		el.innerHTML = content || '';
 		return el;
     }
-    
-    function createStyleForDOMEL(el,position,top,left,width,height,color,background,opacity,pointerEvents,zIndex) 
+
+    function createStyleForDOMEL(el,position,top,left,width,height,color,background,opacity,pointerEvents,zIndex)
     {
 		//this is a helper function for creating the styles for a given element
         el.style.position = position || 'absolute';
@@ -40,7 +40,7 @@
 	 */
 	function RevealFx(el, options) {
         this.el = el;
-        this.revealLayers = [];        
+        this.revealLayers = [];
 		this.options = extend({}, this.options);
 		extend(this.options, options);
 		this._init();
@@ -52,21 +52,21 @@
 	RevealFx.prototype.options = {
 		// If true, then the content will be hidden until it´s "revealed".
 		isContentHidden: true,
-		//number of layers to be displayed 
+		//number of layers to be displayed
 		layers:1,
 		// The animation/reveal settings. This can be set initially or passed when calling the reveal method.
 		revealSettings: {
 			// Animation direction: left right (lr) || right left (rl) || top bottom (tb) || bottom top (bt).
 			direction: 'lr',
 			// Revealers´s background color Array.
-			bgColors: ['#111'],
+			bgColors: ['#993232'],
 			// Animation speed. This is the speed to "cover" and also "uncover" the element (seperately, not the total time).
 			duration: 500,
 			// Animation easing. This is the easing to "cover" and also "uncover" the element.
 			easing: 'easeInOutQuint',
 			// percentage-based value representing how much of the area should be left covered.
 			coverArea: 0,
-			//milliseconds of delay between layers animation thatis used in stagger animation 
+			//milliseconds of delay between layers animation thatis used in stagger animation
 			delay:100,
 			// Callback for when the revealer is covering the element (halfway through of the whole animation)
 			onHalfway: function(contentEl, revealerEl) { return false; },
@@ -89,7 +89,7 @@
 	 */
 	RevealFx.prototype._layout = function() {
 		//instead of going with the %s go with the pxs for the better view
-		//create an array of the selected elements and store it as global 
+		//create an array of the selected elements and store it as global
 		var position = getComputedStyle(this.el).position;
 		if( position !== 'fixed' && position !== 'absolute' && position !== 'relative' ) {
 			this.el.style.position = 'relative';
@@ -103,8 +103,8 @@
         }
         this.el.innerHTML = '';
 		this.el.appendChild(this.content);
-		
-		var topOfRevealerElement=0; 
+
+		var topOfRevealerElement=0;
 		var leftOfRevalerElement=0;
 		const numberOfLayers = this.options.layers;
 		var colorOfBlockLayer ='#111';
@@ -128,10 +128,10 @@
 			createStyleForDOMEL(this.revealLayers[i],'absolute',topOfRevealerElement+'%','0%','100%',(heightOfIndividualBlock+.5)+'%','#fff',colorOfBlockLayer,'0','none');
 			topOfRevealerElement = topOfRevealerElement+heightOfIndividualBlock;
 		}
-		
-        
+
+
 		this.el.classList.add('block-revealer');
-		
+
         this.el.appendChild(this.revealLayers[i]);
         }
 	};
@@ -145,12 +145,12 @@
 		var origin, origin_2,val;
 
 		switch (direction) {
-			case 'lr' : 
+			case 'lr' :
 				val = 'scaleY(1)';
 				origin = '0 50%';
 				origin_2 = '100% 50%';
 				break;
-			case 'rl' : 
+			case 'rl' :
 				val = 'scaleY(1)';
 				origin = '100% 50%';
 				origin_2 = '0 50%';
@@ -160,7 +160,7 @@
 				origin = '50% 0';
 				origin_2 = '50% 100%';
 				break;
-			case 'bt' : 
+			case 'bt' :
 				val = 'scaleX(1)';
 				origin = '50% 100%';
 				origin_2 = '50% 0';
@@ -190,7 +190,7 @@
 			return false;
 		}
 		this.isAnimating = true;
-		
+
 		// Set the revealer element´s transform and transform origin.
 		var defaults = { // In case revealSettings is incomplete, its properties deafault to:
 				duration: 500,
@@ -204,7 +204,7 @@
 			direction = revealSettings.direction || defaults.direction,
 			delay = revealSettings.delay || defaults.delay,
 			transformSettings = this._getTransformSettings(direction);
-	
+
 			for(var i=0;i<this.revealLayers.length;i++)
 			{
 				this.revealLayers[i].style.WebkitTransform = this.revealLayers[i].style.transform =  transformSettings.val;
@@ -216,7 +216,7 @@
 				else
 				this.revealLayers[i].style.backgroundColor = defaults.bgColors[0];
 			}
-		
+
 		// Animate it.
         var self = this,
 			// Second animation step.
@@ -225,9 +225,9 @@
                 delay: anime.stagger(parseInt(delay)),
 				complete: function(anim) {
 					if( typeof revealSettings.onComplete === 'function' ) {
-						revealSettings.onComplete(self.content, self.revealLayers);	
+						revealSettings.onComplete(self.content, self.revealLayers);
 					}
-                    
+
                 self.isAnimating = false;
             }
 			},
@@ -239,12 +239,12 @@
                     for(var i=0;i<self.revealLayers.length;i++)
 					{
 						self.revealLayers[i].style.WebkitTransformOrigin = self.revealLayers[i].style.transformOrigin =  transformSettings.origin.halfway;
-						
-					}			
+
+					}
 			if( typeof revealSettings.onHalfway === 'function' ) {
 				revealSettings.onHalfway(self.content, self.revealLayers);
-			}				
-					 anime(animationSettings_2);		
+			}
+					 anime(animationSettings_2);
 				}
 			};
 
@@ -265,9 +265,9 @@
 			revealSettings.onStart(self.content, self.revealLayers);
 		}
 		anime(animationSettings);
-		
+
 	};
-	
+
 	window.RevealFx = RevealFx;
 
 })(window);
