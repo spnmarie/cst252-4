@@ -75,7 +75,7 @@ function showThemColors() {
         isContentHidden:true,
         layers:4,
         revealSettings : {
-            bgColors: ['#ea999e','#c15258','#883b3f','#662e31'],
+            bgColors: ['#f3c0c7','#f6bbdc','#e04a35','#982615'],
             direction: 'rl',
             duration: 800,
             easing: 'easeInOutCirc',

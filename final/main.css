@@ -7,7 +7,7 @@ body{
 }
 #rfx4
 {
-  background: -webkit-linear-gradient(left,#FFB900,#FF8C00,#F7630C,#E74856,#E81123,#0078D7,#0063B1);
+  background: -webkit-linear-gradient(left,#ea999e,#d8777d,#c15258,#a34248,#883b3f,#d8777d,#ffffff);
    -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -192,7 +192,7 @@ body::after {
 .timeline ul li:nth-child(even) div::before {
   right: -15px;
   border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #3b746b;
+  border-color: transparent transparent transparent #895258;
 }
 
 time {
